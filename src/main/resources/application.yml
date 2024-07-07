@@ -1,0 +1,48 @@
+spring:
+  datasource:
+    url: ${mysqlDbUrl}
+    username: ${mysqlUserName}
+    password: ${mysqlPassword}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  redis:
+    host: ${redisHost}
+    port: ${redisPort}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  sql:
+    init:
+      mode: never
+  kafka:
+    bootstrap-servers: ${kafkaServers}
+    port: ${kafkaPort}
+    advertised.host.name: localhost
+    producer:
+      client-id: kafka-producer-client
+      acks: -1
+      retries: 3
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+server:
+  servlet:
+    context-path: /my-game
+  port: 8080
+
+kafka:
+  score-topic: ${scoreTopic}
+
+limit:
+  max-score: ${maxScore}
+
+auth:
+  secret-key: ${secretKey}
+
+leaderboard-service:
+  secret-key: ${leaderboardSecretKey}
+  base-url: ${leaderboardBaseUrl}
