@@ -3,6 +3,10 @@ https://github.com/amirkpatna1/leaderboardService
 
 # Game Service
 
+# HLD
+
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/0abfe9b4-6cab-48fa-b647-21bc5bad7f91">
+
 ## Overview
 The Game Service is designed to handle player scores, push events to Kafka, and fetch top scores from the leaderboard service using Feign clients. It ensures secure communication with the leaderboard service via request interceptors and provides robust validation and exception handling.
 
